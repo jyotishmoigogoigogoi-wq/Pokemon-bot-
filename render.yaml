@@ -1,0 +1,15 @@
+services:
+  - type: worker
+    name: shadowdex-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: CHANNEL_ID
+        sync: false
+      - key: OWNER_ID
+        value: "7728424218"
